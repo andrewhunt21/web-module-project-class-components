@@ -1,7 +1,8 @@
 import React from 'react';
 import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
-const mainList = [
+const tasks = [
   {
     task: 'learn react',
     id: 111,
@@ -20,6 +21,12 @@ const mainList = [
 ];
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      tasks: tasks
+    }
+  }
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
@@ -27,6 +34,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Todo List</h1>
+        <TodoList />
         <TodoForm />
       </div>
     );
